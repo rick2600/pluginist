@@ -60,7 +60,7 @@ class Pluginist::Plugin
       info[:params] = []
 
       parameters.sort.each do |param_name, param_value|
-        next if %i[authors description].include? param_name
+        next if %i[authors description tags].include? param_name
         info[:params] << {
           name:  param_name,
           description: param_value[1][:description],
