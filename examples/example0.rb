@@ -18,3 +18,9 @@ plugin_manager.run_plugin('hello', name: 'Bob')
 
 puts "\n[*] Running a plugin ".ljust(80, '=')
 plugin_manager.run_plugin('calc', first: '10', second: '5', op: '+')
+
+begin
+  pp plugin_manager.info_plugin('hellox')
+rescue Pluginist::PluginLoadError => e
+  puts ">> #{e}"
+end

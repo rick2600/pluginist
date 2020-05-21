@@ -51,7 +51,7 @@ class Pluginist::Manager
       require @plugins_name_path[plugin_name]
       plugin = to_constant(plugin_name)
     else
-      puts "Plugin '#{plugin_name}' not found"
+      raise Pluginist::PluginLoadError.new
     end
     plugin
   end
